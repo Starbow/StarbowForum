@@ -22,7 +22,7 @@ h1 a {
 
 .navigation {
 	border: 1px solid #ccc;
-	background: #F5F5F4;
+	background: #E2E2E4;
 	padding: 4px;
 	margin-bottom: 10px;
 	font-size: 13px;
@@ -43,12 +43,12 @@ h1 a {
 .post {
 	border: 1px solid #ccc;
 	padding: 1px;
-	background: #F5F5F4;
+	background: #E2E2E4;
 	margin-bottom: 10px;
 }
 
 .post .header {
-	background: #F5F5F4;
+	background: #E2E2E4;
 }
 
 .post .header .author a {
@@ -74,7 +74,7 @@ h1 a {
 }
 
 .header {
-	background: #F5F5F4;
+	background: #E2E2E4;
 	font-weight: bold;
 	padding: 4px;
 	border-bottom: 1px solid #ccc;
@@ -109,7 +109,7 @@ h3 {
 }
 
 .error .header {
-	background: #F5F5F4;
+	background: #E2E2E4;
 	font-weight: bold;
 	padding: 4px;
 	border-bottom: 1px solid #ccc;
@@ -120,7 +120,7 @@ h3 {
 }
 
 .multipage {
-	background: #F5F5F4;
+	background: #E2E2E4;
 	border: 1px solid #ccc;
 	margin-bottom: 10px;
 	padding: 4px;
