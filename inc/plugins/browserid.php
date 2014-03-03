@@ -43,8 +43,9 @@ if (isset($_GET["assertion"])) {
  * */
 function Browserid_button($page)
 {
+    $forumUrlBase = $settings['bburl'];
     $page = str_replace(
-        "<a href=\"http://starbowmod.com/forum/member.php?action=login\" onclick=\"MyBB.quickLogin(); return false;\">Login</a> &mdash; <a href=\"http://starbowmod.com/forum/member.php?action=register\">Register</a>)</span>".PHP_EOL,
+        "<a href=\"$forumUrlBase/member.php?action=login\" onclick=\"MyBB.quickLogin(); return false;\">Login</a> &mdash; <a href=\"$forumUrlBase/member.php?action=register\">Register</a>)</span>".PHP_EOL,
         "<a id='browserid' href='member.php?action=login'>Login</a>)</span>".PHP_EOL.
         "<!-- end: header_welcomeblock_guest -->",
         $page
