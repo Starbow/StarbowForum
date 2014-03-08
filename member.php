@@ -1525,6 +1525,7 @@ if($mybb->input['action'] == "profile")
 
 	if($memprofile['avatar'])
 	{
+		//STARBOW - Patched this to show large versions of avatars
 		$avatar_width_height = '';
 		
 		//Starbow forum uses a special extra large version of our standard avatars on the profile page.
@@ -1542,6 +1543,8 @@ if($mybb->input['action'] == "profile")
 		
 		$memprofile['avatar'] = htmlspecialchars_uni($memprofile['avatar']);
 		$avatar = "<img src=\"{$memprofile['avatar']}\" alt=\"\" $avatar_width_height />";
+		
+		//ENDSTARBOW 
 	}
 	else
 	{
