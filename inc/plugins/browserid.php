@@ -43,6 +43,7 @@ if (isset($_GET["assertion"])) {
  * */
 function Browserid_button($page)
 {
+    global $settings;
     $forumUrlBase = $settings['bburl'];
     $page = str_replace(
         "<a href=\"$forumUrlBase/member.php?action=login\" onclick=\"MyBB.quickLogin(); return false;\">Login</a> &mdash; <a href=\"$forumUrlBase/member.php?action=register\">Register</a>)</span>".PHP_EOL,
