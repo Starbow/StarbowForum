@@ -1525,13 +1525,26 @@ if($mybb->input['action'] == "profile")
 
 	if($memprofile['avatar'])
 	{
-		$memprofile['avatar'] = htmlspecialchars_uni($memprofile['avatar']);
-		$avatar_dimensions = explode("|", $memprofile['avatardimensions']);
-		if($avatar_dimensions[0] && $avatar_dimensions[1])
-		{
-			$avatar_width_height = "width=\"{$avatar_dimensions[0]}\" height=\"{$avatar_dimensions[1]}\"";
+		//STARBOW - Patched this to show large versions of avatars
+		$avatar_width_height = '';
+		
+		//Starbow forum uses a special extra large version of our standard avatars on the profile page.
+		$std_avatar_dir = $mybb->settings['avatardir'];
+		$large_avatar_dir = $mybb->settings['avatarlargeversiondir'];
+		if(strpos($memprofile['avatar'], $std_avatar_dir) === 0) {
+			$memprofile['avatar'] = str_replace($std_avatar_dir, $large_avatar_dir, $memprofile['avatar']);
+		} else {
+			$avatar_dimensions = explode("|", $memprofile['avatardimensions']);
+			if($avatar_dimensions[0] && $avatar_dimensions[1])
+			{
+				$avatar_width_height = "width=\"{$avatar_dimensions[0]}\" height=\"{$avatar_dimensions[1]}\"";
+			}
 		}
+		
+		$memprofile['avatar'] = htmlspecialchars_uni($memprofile['avatar']);
 		$avatar = "<img src=\"{$memprofile['avatar']}\" alt=\"\" $avatar_width_height />";
+		
+		//ENDSTARBOW 
 	}
 	else
 	{
