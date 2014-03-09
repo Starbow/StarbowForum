@@ -376,6 +376,16 @@ else
 	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_guest")."\";");
 }
 
+//STARBOW - To add a custom subtemplate, just add its name to the array
+$starbowSubtemplates = [
+	'starbow_nav_bar'
+];
+
+foreach($starbowSubtemplates as $cur) {
+	eval("\$$cur = \"".$templates->get($cur)."\";");
+}
+//END STARBOW
+
 $pending_joinrequests = '';
 
 // Read the group leaders cache
