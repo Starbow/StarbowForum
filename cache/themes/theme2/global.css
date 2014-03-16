@@ -1,4 +1,3 @@
-
 body {
 	background:#D1D1D1;
 	background-repeat:repeat-x;
@@ -88,7 +87,6 @@ table {
 }
 
 .thead {
-	background: #026CB1;
 	color: #ffffff;
 }
 
@@ -149,7 +147,6 @@ table {
 }
 
 .tfoot {
-	background: #ffffff;
 	color: #ffffff;
 }
 
@@ -170,7 +167,6 @@ table {
 
 .bottommenu {
 	background: #efefef;
-	color: #ffffff;
 	border: 1px solid #4874a3;
 	padding: 13px;
 }
@@ -704,4 +700,3 @@ div.error ul {
 	vertical-align: middle;
 	cursor: pointer;
 }
-
