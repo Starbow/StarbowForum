@@ -9,6 +9,10 @@
  * overwriting /cache/themes with the contents of a backup, then using myBB's 
  * "Export Theme" function to replace the theme(s) causing the problem.
  */
+if(php_sapi_name() != 'cli') { //Prevent access other than by command line
+	die('This file may not be loaded via web!');
+}
+
 define('IN_MYBB', 1); //Otherwise included scripts think we are a hacker and 
 					  //generate errors
 
