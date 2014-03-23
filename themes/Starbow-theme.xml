@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="Starbow" version="1612">
 	<properties>
-		<templateset><![CDATA[9]]></templateset>
+		<templateset><![CDATA[10]]></templateset>
 		<editortheme><![CDATA[default]]></editortheme>
 		<imgdir><![CDATA[images]]></imgdir>
 		<logo><![CDATA[images/logo.gif]]></logo>
@@ -102,7 +102,7 @@
     box-shadow: 0 0 0 #380404;
 }
 
-.authentication {
+#navbar_items_right {
   float: right;
 }
 
@@ -114,8 +114,7 @@
 #navbar .menu ul {
   font-weight: normal;
 }
-
-]]>
+		]]>
 		</stylesheet>
 		<stylesheet name="global.css" version="1612"><![CDATA[body {
 	background:#D1D1D1;
@@ -225,7 +224,7 @@ table {
 }
 
 .tcat {
-	background: #8F1B2B;
+	background: #ae3d40;
 	color: #FFFFFF;
 	font-size: 12px;
 }
@@ -819,7 +818,8 @@ div.error ul {
 	vertical-align: middle;
 	cursor: pointer;
 }
-]]>
+
+		]]>
 		</stylesheet>
 	</stylesheets>
 	<templates>
@@ -866,16 +866,21 @@ div.error ul {
 
 <!-- jQuery and jQueryUI currently only used for the menu, if they're needed more generally we should move them to a proper global template -->
 <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+    jQuery.noConflict();
+</script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script type="text/javascript" src="//login.persona.org/include.js"></script>
+<script type="text/javascript" src="{$mybb->settings['sb_main_site_url']}/static/browserid/api.js"></script>
+<script type="text/javascript" src="{$mybb->settings['sb_main_site_url']}/static/browserid/browserid.js"></script>
+<script type="text/javascript">
+    django_browserid._infoXHR = jQuery.get('{$mybb->settings['sb_main_site_url']}/browserid/info/');
+</script>
 
 <!-- TODO: Figure out how to bind a dependency so that this link can go into the header if the nav bar is present -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 
-<script>
-	$(function() {
-		$(".menu").menu({position: { my:"left top", at:"left-1 top+40"}});
-	});
-</script>
 <div id="navbar" class="navbar-fixed-top">
         <div class="navbar-logo"><a href="{$mybb->settings['sb_main_site_url']}"></a></div>
 	<ul class="menu">
@@ -899,7 +904,18 @@ div.error ul {
 		</li>
 		<li><a href="{$mybb->settings['sb_main_site_url']}/events">Events</a></li>
 		<li><a href="http://starbow.wikia.com/wiki/Starbow_Wiki">Wiki</a></li>
+
+                <div id="navbar_items_right">
+                    <li><a href="{$mybb->settings['sb_main_site_url']}/user/register">Register</a></li>
+                    <li>
+                        <a href="javascript:void(0);" class="browserid-login">Login</a>
+                    </li>
+                </div>
 	</ul>
-</div>]]></template>
+</div>
+
+<script>
+    jQuery(".menu").menu({position: { my:"left top", at:"left-1 top+40"}});
+</script>]]></template>
 	</templates>
 </theme>
