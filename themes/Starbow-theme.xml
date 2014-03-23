@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="Starbow" version="1612">
 	<properties>
-		<templateset><![CDATA[1]]></templateset>
+		<templateset><![CDATA[9]]></templateset>
 		<editortheme><![CDATA[default]]></editortheme>
 		<imgdir><![CDATA[images]]></imgdir>
 		<logo><![CDATA[images/logo.gif]]></logo>
@@ -24,43 +24,50 @@
 }
 
 #navbar {
-  background-color: rgba(86, 13, 13, 0.95);
-  color: #e3e4e6;
-  height: 40px;
-  left: 0;
-  min-width: 900px;
-  padding-left: 5px;
-  -webkit-box-shadow: 0 0 5px #000001 ;
-  -moz-box-shadow: 0 0 5px #000001 ;
-  box-shadow: 0 0 5px #000001 ;
+	color: #e3e4e6;
+	background-color: rgba(86, 13, 13, 0.95);
+	height: 40px;
+	left: 0;
+	min-width: 900px;
+	padding-left: 5px;
+	-webkit-box-shadow: 0 0 5px #000001;
+	-moz-box-shadow: 0 0 5px #000001;
+	box-shadow: 0 0 5px #000001;
 }
+
 #navbar:after {
   content: "";
   display: table;
   clear: both;
 }
+
 #navbar .navbar-logo {
   float: left;
-  background-image: url("http://starbowmod.com/static/site/img/bow.svg");
+  background-image: url(http://starbowmod.com/static/site/img/bow.svg);
   background-size: 40px 40px;
   height: 40px;
   width: 40px;
 }
+
 #navbar .ui-menu {
   background-color: rgba(86, 13, 13, 0.95);
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 #navbar .ui-menu li {
   float: left;
 }
+
 #navbar .ui-menu li .ui-menu {
   position: fixed;
 }
+
 #navbar .ui-menu li .ui-menu li {
   float: none;
 }
+
 #navbar a {
   color: #e3e4e6;
   display: block;
@@ -78,6 +85,7 @@
   -o-transition: line-height 0.05s ease-in-out;
   transition: line-height 0.05s ease-in-out;
 }
+
 #navbar a:hover {
   background-color: #e3e4e6;
   color: #560d0d;
@@ -85,6 +93,13 @@
   -webkit-box-shadow: 0 0 5px #380404 ;
   -moz-box-shadow: 0 0 5px #380404 ;
   box-shadow: 0 0 5px #380404 ;
+}
+
+#navbar .navbar-logo a:hover {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 #380404;
+    -moz-box-shadow: 0 0 0 #380404;
+    box-shadow: 0 0 0 #380404;
 }
 
 .authentication {
@@ -95,9 +110,12 @@
 #navbar li {
   padding-left: 0px;
 }
+
 #navbar .menu ul {
   font-weight: normal;
-}]]>
+}
+
+]]>
 		</stylesheet>
 		<stylesheet name="global.css" version="1612"><![CDATA[body {
 	background:#D1D1D1;
@@ -188,7 +206,6 @@ table {
 }
 
 .thead {
-	background: #026CB1
 	color: #ffffff;
 }
 
@@ -208,12 +225,16 @@ table {
 }
 
 .tcat {
-	background: #ae3d40;
+	background: #8F1B2B;
 	color: #FFFFFF;
 	font-size: 12px;
 }
 
 .tcat a:link {
+	color: #8F1B2B;
+}
+
+.tcat a:visited {
 	color: #8F1B2B;
 }
 
@@ -245,7 +266,6 @@ table {
 }
 
 .tfoot {
-	background: #ffffff
 	color: #ffffff;
 }
 
@@ -266,7 +286,6 @@ table {
 
 .bottommenu {
 	background: #efefef;
-	color: #ffffff
 	border: 1px solid #4874a3;
 	padding: 13px;
 }
@@ -290,7 +309,7 @@ table {
 }
 
 .navigation .active {
-	color: #662424;
+	color: #FFFFFF;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -858,9 +877,9 @@ div.error ul {
 	});
 </script>
 <div id="navbar" class="navbar-fixed-top">
-	<div class="navbar-logo"></div>
+        <div class="navbar-logo"><a href="{$mybb->settings['sb_main_site_url']}"></a></div>
 	<ul class="menu">
-		<li><a href="{$mybb->settings['sb_main_site_url']}">Starbow Home</a></li>
+		<li><a href="{$mybb->settings['sb_main_site_url']}/forum">Forum</a></li>
 		<li><a href="{$mybb->settings['sb_main_site_url']}/news">News</a></li>
 		<li>
 			<a href="{$mybb->settings['sb_main_site_url']}/about">About<i class="fa fa-angle-down"></i></a>
@@ -878,9 +897,8 @@ div.error ul {
 				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/KR">KR Ladder</a></li>
 			</ul>
 		</li>
-		<li><a href="{$mybb->settings['sb_main_site_url']}/calendar">Calendar</a></li>
+		<li><a href="{$mybb->settings['sb_main_site_url']}/events">Events</a></li>
 		<li><a href="http://starbow.wikia.com/wiki/Starbow_Wiki">Wiki</a></li>
-		<li><a href="{$mybb->settings['sb_main_site_url']}/forum">Forum</a></li>
 	</ul>
 </div>]]></template>
 	</templates>
