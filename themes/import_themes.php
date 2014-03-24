@@ -16,9 +16,9 @@ if(php_sapi_name() != 'cli') { //Prevent access other than by command line
 define('IN_MYBB', 1); //Otherwise included scripts think we are a hacker and 
 					  //generate errors
 
-require_once('../global.php');
-require_once('../admin/inc/functions.php');
-require_once('../admin/inc/functions_themes.php');
+require_once(__DIR__.'/../global.php');
+require_once(__DIR__.'/../admin/inc/functions.php');
+require_once(__DIR__.'/../admin/inc/functions_themes.php');
 
 $importOptions = array(
 	'no_stylesheets' => false, //Do import style sheets
@@ -28,7 +28,7 @@ $importOptions = array(
 	'force_name_check' => false, //Do not fail if the theme already exists
 );
 
-$templateFileNames = glob('*.xml');
+$templateFileNames = glob(__DIR__.'/*.xml');
 
 foreach($templateFileNames as $curFileName) {
 	echo "Importing $curFileName...";
