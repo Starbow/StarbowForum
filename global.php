@@ -354,6 +354,10 @@ if($mybb->user['uid'] != 0)
 	// Tell the user their PM usage
 	$lang->welcome_pms_usage = $lang->sprintf($lang->welcome_pms_usage, my_number_format($mybb->user['pms_unread']), my_number_format($mybb->user['pms_total']));
 	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_member")."\";");
+	
+	//STARBOW - Logout button for logged-in users
+	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_logout")."\";");
+	//END STARBOW
 }
 // Otherwise, we have a guest
 else
@@ -376,6 +380,10 @@ else
 //			break;
 //	}
 //	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_guest")."\";");
+	
+	//STARBOW - Login button for non-logged-in users
+	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_login")."\";");
+	//END STARBOW
 // END STARBOW
 }
 
