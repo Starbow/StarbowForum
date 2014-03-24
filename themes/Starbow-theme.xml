@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="Starbow" version="1612">
 	<properties>
-		<templateset><![CDATA[10]]></templateset>
+		<templateset><![CDATA[11]]></templateset>
 		<editortheme><![CDATA[default]]></editortheme>
 		<imgdir><![CDATA[images]]></imgdir>
 		<logo><![CDATA[images/logo.gif]]></logo>
@@ -114,6 +114,7 @@
 #navbar .menu ul {
   font-weight: normal;
 }
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="global.css" version="1612"><![CDATA[body {
@@ -308,7 +309,7 @@ table {
 }
 
 .navigation .active {
-	color: #FFFFFF;
+	color: #662424;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -819,6 +820,7 @@ div.error ul {
 	cursor: pointer;
 }
 
+		
 		]]>
 		</stylesheet>
 	</stylesheets>
@@ -836,9 +838,7 @@ div.error ul {
 				</ul>
 			</div>
 			<hr class="hidden" />
-			<div id="panel">
-				{$welcomeblock}
-			</div>
+			{$welcomeblock}
 		</div>
 		<hr class="hidden" />
 		<br class="clear" />
@@ -871,13 +871,6 @@ div.error ul {
 </script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-<script type="text/javascript" src="//login.persona.org/include.js"></script>
-<script type="text/javascript" src="{$mybb->settings['sb_main_site_url']}/static/browserid/api.js"></script>
-<script type="text/javascript" src="{$mybb->settings['sb_main_site_url']}/static/browserid/browserid.js"></script>
-<script type="text/javascript">
-    django_browserid._infoXHR = jQuery.get('{$mybb->settings['sb_main_site_url']}/browserid/info/');
-</script>
-
 <!-- TODO: Figure out how to bind a dependency so that this link can go into the header if the nav bar is present -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 
@@ -908,7 +901,7 @@ div.error ul {
                 <div id="navbar_items_right">
                     <li><a href="{$mybb->settings['sb_main_site_url']}/user/register">Register</a></li>
                     <li>
-                        <a href="javascript:void(0);" class="browserid-login">Login</a>
+                        <a id="browserid" href="javascript:void(0);">Login</a>
                     </li>
                 </div>
 	</ul>
@@ -917,5 +910,13 @@ div.error ul {
 <script>
     jQuery(".menu").menu({position: { my:"left top", at:"left-1 top+40"}});
 </script>]]></template>
+		<template name="header_welcomeblock_member" version="1612"><![CDATA[<div id="panel">
+	<span style="float:right;">{$lang->welcome_current_time}</span>
+		{$lang->welcome_back} (<a href="{$mybb->settings['bburl']}/usercp.php"><strong>{$lang->welcome_usercp}</strong></a>{$modcplink}{$admincplink} &mdash; <a href="{$mybb->settings['bburl']}/member.php?action=logout&amp;logoutkey={$mybb->user['logoutkey']}">{$lang->welcome_logout}</a>)<br />
+				<span class="links">
+					<a href="#" onclick="MyBB.popupWindow('{$mybb->settings['bburl']}/misc.php?action=buddypopup', 'buddyList', 350, 350);">{$lang->welcome_open_buddy_list}</a>
+				</span>
+				<a href="{$mybb->settings['bburl']}/search.php?action=getnew">{$lang->welcome_newposts}</a> | <a href="{$mybb->settings['bburl']}/search.php?action=getdaily">{$lang->welcome_todaysposts}</a> | <a href="{$mybb->settings['bburl']}/private.php">{$lang->welcome_pms}</a> {$lang->welcome_pms_usage}
+</div>]]></template>
 	</templates>
 </theme>
