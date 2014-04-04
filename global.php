@@ -354,27 +354,48 @@ if($mybb->user['uid'] != 0)
 	// Tell the user their PM usage
 	$lang->welcome_pms_usage = $lang->sprintf($lang->welcome_pms_usage, my_number_format($mybb->user['pms_unread']), my_number_format($mybb->user['pms_total']));
 	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_member")."\";");
+	
+	//STARBOW - Logout button for logged-in users
+	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_logout")."\";");
+	//END STARBOW
 }
 // Otherwise, we have a guest
 else
 {
-	switch($mybb->settings['username_method'])
-	{
-		case 0:
-			$login_username = $lang->login_username;
-			break;
-		case 1:
-			$login_username = $lang->login_username1;
-			break;
-		case 2:
-			$login_username = $lang->login_username2;
-			break;
-		default:
-			$login_username = $lang->login_username;
-			break;
-	}
-	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_guest")."\";");
+// STARBOW - Because we have login/registration links in the navigation bar, 
+// we don't show a guest welcome box.
+//	switch($mybb->settings['username_method'])
+//	{
+//		case 0:
+//			$login_username = $lang->login_username;
+//			break;
+//		case 1:
+//			$login_username = $lang->login_username1;
+//			break;
+//		case 2:
+//			$login_username = $lang->login_username2;
+//			break;
+//		default:
+//			$login_username = $lang->login_username;
+//			break;
+//	}
+//	eval("\$welcomeblock = \"".$templates->get("header_welcomeblock_guest")."\";");
+	
+	//STARBOW - Login button for non-logged-in users
+	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_login")."\";");
+	//END STARBOW
+// END STARBOW
 }
+
+//STARBOW - To add a custom subtemplate, just add its name to the array
+$starbowSubtemplates = [
+	'starbow_nav_bar'
+];
+
+foreach($starbowSubtemplates as $cur) {
+	eval("\$$cur = \"".$templates->get($cur)."\";");
+}
+//END STARBOW
 
 $pending_joinrequests = '';
 

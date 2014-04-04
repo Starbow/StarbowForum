@@ -1,4 +1,123 @@
-body {
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Starbow" version="1612">
+	<properties>
+		<templateset><![CDATA[11]]></templateset>
+		<editortheme><![CDATA[default]]></editortheme>
+		<imgdir><![CDATA[images]]></imgdir>
+		<logo><![CDATA[images/logo.gif]]></logo>
+		<tablespace><![CDATA[4]]></tablespace>
+		<borderwidth><![CDATA[1]]></borderwidth>
+	</properties>
+	<stylesheets>
+		<stylesheet name="starbow_nav_bar.css" version="1612"><![CDATA[body {
+        margin-top: 3.3em;
+}
+
+/*
+ * Based on header.scss from the main Starbow site, with changes mostly to add priority as necessary to selectors
+ */
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+#navbar {
+	color: #e3e4e6;
+	background-color: rgba(86, 13, 13, 0.95);
+	height: 40px;
+	left: 0;
+	min-width: 900px;
+	padding-left: 5px;
+	-webkit-box-shadow: 0 0 5px #000001;
+	-moz-box-shadow: 0 0 5px #000001;
+	box-shadow: 0 0 5px #000001;
+}
+
+#navbar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#navbar .navbar-logo {
+  float: left;
+  background-image: url(http://starbowmod.com/static/site/img/bow.svg);
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+}
+
+#navbar .ui-menu {
+  background-color: rgba(86, 13, 13, 0.95);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar .ui-menu li {
+  float: left;
+}
+
+#navbar .ui-menu li .ui-menu {
+  position: fixed;
+}
+
+#navbar .ui-menu li .ui-menu li {
+  float: none;
+}
+
+#navbar a {
+  color: #e3e4e6;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-family: "goboldregular";
+  line-height: 40px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  text-shadow: 0 0 3px #380404;
+  -webkit-transition: line-height 0.05s ease-in-out;
+  -moz-transition: line-height 0.05s ease-in-out;
+  -o-transition: line-height 0.05s ease-in-out;
+  transition: line-height 0.05s ease-in-out;
+}
+
+#navbar a:hover {
+  background-color: #e3e4e6;
+  color: #560d0d;
+  text-shadow: 0 0 1px rgba(56, 4, 4, 0.25);
+  -webkit-box-shadow: 0 0 5px #380404 ;
+  -moz-box-shadow: 0 0 5px #380404 ;
+  box-shadow: 0 0 5px #380404 ;
+}
+
+#navbar .navbar-logo a:hover {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 #380404;
+    -moz-box-shadow: 0 0 0 #380404;
+    box-shadow: 0 0 0 #380404;
+}
+
+#navbar_items_right {
+  float: right;
+}
+
+/* Corrections required to override some forum standard rules */
+#navbar li {
+  padding-left: 0px;
+}
+
+#navbar .menu ul {
+  font-weight: normal;
+}
+		
+		]]>
+		</stylesheet>
+		<stylesheet name="global.css" version="1612"><![CDATA[body {
 	background:#D1D1D1;
 	background-repeat:repeat-x;
 	font-family: Verdana, Arial, Sans-Serif;
@@ -106,7 +225,7 @@ table {
 }
 
 .tcat {
-	background: #8F1B2B;
+	background: #ae3d40;
 	color: #FFFFFF;
 	font-size: 12px;
 }
@@ -190,7 +309,7 @@ table {
 }
 
 .navigation .active {
-	color: #FFFFFF;
+	color: #662424;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -292,7 +411,7 @@ select {
 }
 
 .validation_error {
-	background: url(../../../images/invalid.gif) no-repeat center left;
+	background: url(images/invalid.gif) no-repeat center left;
 	color: #f30;
 	margin: 5px 0;
 	padding: 5px;
@@ -302,7 +421,7 @@ select {
 }
 
 .validation_success {
-	background: url(../../../images/valid.gif) no-repeat center left;
+	background: url(images/valid.gif) no-repeat center left;
 	color: #00b200;
 	margin: 5px 0;
 	padding: 5px;
@@ -312,7 +431,7 @@ select {
 }
 
 .validation_loading {
-	background: url(../../../images/spinner.gif) no-repeat center left;
+	background: url(images/spinner.gif) no-repeat center left;
 	color: #555;
 	margin: 5px 0;
 	padding: 5px;
@@ -551,7 +670,7 @@ div.error p em {
 	padding-left: 24px;
 	display: block;
 	color: #C00;
-	background: url(../../../images/error.gif) no-repeat 0;
+	background: url(images/error.gif) no-repeat 0;
 }
 
 div.error ul {
@@ -654,7 +773,7 @@ div.error ul {
 }
 
 .quick_jump {
-	background: url(../../../images/jump.gif) no-repeat 0;
+	background: url(images/jump.gif) no-repeat 0;
 	width: 13px;
 	height: 13px;
 	padding-left: 13px; /* amount of padding needed for image to fully show */
@@ -700,3 +819,106 @@ div.error ul {
 	vertical-align: middle;
 	cursor: pointer;
 }
+
+		
+		]]>
+		</stylesheet>
+	</stylesheets>
+	<templates>
+		<template name="header" version="1612"><![CDATA[<div id="container">
+		{$starbow_nav_bar}
+		<a name="top" id="top"></a>
+		<div id="header">
+			<div class="menu">
+				<ul>
+					<li><a href="{$mybb->settings['bburl']}/search.php"><img src="{$theme['imgdir']}/toplinks/search.gif" alt="" title="" />{$lang->toplinks_search}</a></li>
+					<li><a href="{$mybb->settings['bburl']}/memberlist.php"><img src="{$theme['imgdir']}/toplinks/memberlist.gif" alt="" title="" />{$lang->toplinks_memberlist}</a></li>
+					<li><a href="{$mybb->settings['bburl']}/calendar.php"><img src="{$theme['imgdir']}/toplinks/calendar.gif" alt="" title="" />{$lang->toplinks_calendar}</a></li>
+					<li><a href="{$mybb->settings['bburl']}/misc.php?action=help"><img src="{$theme['imgdir']}/toplinks/help.gif" alt="" title="" />{$lang->toplinks_help}</a></li>
+				</ul>
+			</div>
+			<hr class="hidden" />
+			{$welcomeblock}
+		</div>
+		<hr class="hidden" />
+		<br class="clear" />
+		<div id="content">
+		{$lang_select}
+			{$pm_notice}
+			{$bannedwarning}
+			{$bbclosedwarning}
+			{$unreadreports}
+			{$pending_joinrequests}
+			<navigation>
+			<br />]]></template>
+		<template name="starbow_nav_bar" version="1612"><![CDATA[<!-- MyBB's style parsing breaks the url() declarations in @font-face for some reason, so rather than fight with it I've just included the font-face declaration in the nav-bar's template, since the font is only used here -->
+<style>
+	@font-face {
+		font-family:'goboldregular';
+		src:url("{$mybb->settings['bburl']}/fonts/gobold-webfont.eot") format("embedded-opentype"), 
+                      url("{$mybb->settings['bburl']}/fonts/gobold-webfont.ttf") format("truetype"),
+                      url("{$mybb->settings['bburl']}/fonts/gobold-webfont.svg") format("svg"),
+                      url("{$mybb->settings['bburl']}/fonts/gobold-webfont.woff") format("woff");
+		font-weight:normal;
+		font-style:normal
+	}
+</style>
+
+<!-- jQuery and jQueryUI currently only used for the menu, if they're needed more generally we should move them to a proper global template -->
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+    jQuery.noConflict();
+</script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<!-- TODO: Figure out how to bind a dependency so that this link can go into the header if the nav bar is present -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+
+<div id="navbar" class="navbar-fixed-top">
+        <div class="navbar-logo"><a href="{$mybb->settings['sb_main_site_url']}"></a></div>
+	<ul class="menu">
+		<li><a href="{$mybb->settings['sb_main_site_url']}/forum">Forum</a></li>
+		<li><a href="{$mybb->settings['sb_main_site_url']}/news">News</a></li>
+		<li>
+			<a href="{$mybb->settings['sb_main_site_url']}/about">About<i class="fa fa-angle-down"></i></a>
+			<ul>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/about/overview">Overview</a></li>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/about/howtoplay">How to Play</a></li>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/about/credits">Credits</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Ladders<i class="fa fa-angle-down"></i></a>
+			<ul>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/NA">NA Ladder</a></li>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/EU">EU Ladder</a></li>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/KR">KR Ladder</a></li>
+			</ul>
+		</li>
+		<li><a href="{$mybb->settings['sb_main_site_url']}/events">Events</a></li>
+		<li><a href="http://starbow.wikia.com/wiki/Starbow_Wiki">Wiki</a></li>
+
+                <div id="navbar_items_right">
+                    <li><a href="{$mybb->settings['sb_main_site_url']}/user/register">Register</a></li>
+                    <li>
+                        {$starbow_auth_btn}
+                    </li>
+                </div>
+	</ul>
+</div>
+
+<script>
+    jQuery(".menu").menu({position: { my:"left top", at:"left-1 top+40"}});
+</script>]]></template>
+		<template name="starbow_nav_bar_login" version="1612"><![CDATA[<a id="browserid" href="javascript:void(0);">Login</a>]]></template>
+		<template name="header_welcomeblock_member" version="1612"><![CDATA[<div id="panel">
+	<span style="float:right;">{$lang->welcome_current_time}</span>
+		{$lang->welcome_back} (&nbsp;<a href="{$mybb->settings['bburl']}/usercp.php"><strong>{$lang->welcome_usercp}</strong></a>{$modcplink}{$admincplink})<br />
+				<span class="links">
+					<a href="#" onclick="MyBB.popupWindow('{$mybb->settings['bburl']}/misc.php?action=buddypopup', 'buddyList', 350, 350);">{$lang->welcome_open_buddy_list}</a>
+				</span>
+				<a href="{$mybb->settings['bburl']}/search.php?action=getnew">{$lang->welcome_newposts}</a> | <a href="{$mybb->settings['bburl']}/search.php?action=getdaily">{$lang->welcome_todaysposts}</a> | <a href="{$mybb->settings['bburl']}/private.php">{$lang->welcome_pms}</a> {$lang->welcome_pms_usage}
+</div>]]></template>
+		<template name="starbow_nav_bar_logout" version="1612"><![CDATA[<a href="{$mybb->settings['bburl']}/member.php?action=logout&amp;logoutkey={$mybb->user['logoutkey']}">Logout</a>]]></template>
+	</templates>
+</theme>
