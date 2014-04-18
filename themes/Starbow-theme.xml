@@ -875,7 +875,7 @@ div.error ul {
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 
 <div id="navbar" class="navbar-fixed-top">
-        <div class="navbar-logo"><a href="{$mybb->settings['sb_main_site_url']}"></a></div>
+        <div class="navbar-logo"><a href="//starbowmod.com"></a></div>
 	<ul class="menu">
 		<li><a href="{$mybb->settings['sb_main_site_url']}/forum">Forum</a></li>
 		<li><a href="{$mybb->settings['sb_main_site_url']}/news">News</a></li>
@@ -893,6 +893,7 @@ div.error ul {
 				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/NA">NA Ladder</a></li>
 				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/EU">EU Ladder</a></li>
 				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/KR">KR Ladder</a></li>
+				<li><a href="{$mybb->settings['sb_main_site_url']}/ladder/global">Global Ladder</a></li>
 			</ul>
 		</li>
 		<li><a href="{$mybb->settings['sb_main_site_url']}/events">Events</a></li>
