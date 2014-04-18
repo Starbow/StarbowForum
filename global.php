@@ -357,6 +357,9 @@ if($mybb->user['uid'] != 0)
 	
 	//STARBOW - Logout button for logged-in users
 	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_logout")."\";");
+	
+	//"Welcome, <userName>!" for logged-in users
+	eval("\$starbow_nav_welcome = \"".$templates->get("starbow_nav_bar_welcome")."\";");
 	//END STARBOW
 }
 // Otherwise, we have a guest
@@ -383,6 +386,9 @@ else
 	
 	//STARBOW - Login button for non-logged-in users
 	eval("\$starbow_auth_btn = \"".$templates->get("starbow_nav_bar_login")."\";");
+	
+	//Registration link for non-logged-in users
+	eval("\$starbow_nav_welcome = \"".$templates->get("starbow_nav_bar_register")."\";");
 	//END STARBOW
 // END STARBOW
 }
