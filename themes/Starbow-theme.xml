@@ -70,7 +70,6 @@
 
 #navbar a {
   color: #e3e4e6;
-  display: block;
   text-align: left;
   font-size: 18px;
   font-family: "goboldregular";
@@ -85,6 +84,10 @@
   -o-transition: line-height 0.05s ease-in-out;
   transition: line-height 0.05s ease-in-out;
 }
+                    
+#navbar ul ul a {   
+  display: block; /* Necessary for under-menu items to appear beneath each other */
+}    
 
 #navbar a:hover {
   background-color: #e3e4e6;
@@ -104,6 +107,7 @@
 
 #navbar_items_right {
   float: right;
+  font-size: 16px;
 }
 
 /* Corrections required to override some forum standard rules */
@@ -900,7 +904,9 @@ div.error ul {
 		<li><a href="http://starbow.wikia.com/wiki/Starbow_Wiki">Wiki</a></li>
 
                 <div id="navbar_items_right">
-                    <li><a href="{$mybb->settings['sb_main_site_url']}/user/register">Register</a></li>
+                    <li>
+                        {$starbow_nav_welcome}
+                    </li>
                     <li>
                         {$starbow_auth_btn}
                     </li>
@@ -921,5 +927,11 @@ div.error ul {
 				<a href="{$mybb->settings['bburl']}/search.php?action=getnew">{$lang->welcome_newposts}</a> | <a href="{$mybb->settings['bburl']}/search.php?action=getdaily">{$lang->welcome_todaysposts}</a> | <a href="{$mybb->settings['bburl']}/private.php">{$lang->welcome_pms}</a> {$lang->welcome_pms_usage}
 </div>]]></template>
 		<template name="starbow_nav_bar_logout" version="1612"><![CDATA[<a href="{$mybb->settings['bburl']}/member.php?action=logout&amp;logoutkey={$mybb->user['logoutkey']}">Logout</a>]]></template>
+                <template name="starbow_nav_bar_register" version="1612"><![CDATA[
+                    <a href="{$mybb->settings['sb_main_site_url']}/user/register">Register</a>
+                ]]></template>
+                <template name="starbow_nav_bar_welcome" version="1612"><![CDATA[
+                    Welcome, <a href="{$mybb->settings['sb_main_site_url']}/user/home">{$mybb->user['username']}</a>
+                ]]></template>
 	</templates>
 </theme>
