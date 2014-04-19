@@ -118,6 +118,13 @@
 #navbar .menu ul {
   font-weight: normal;
 }
+                    
+/* Starbow's custom MyCode (bbCode) styling */
+.starbow_spoiler_toggler {
+  color: #808080;
+  font-family: monospace;
+  cursor: pointer;
+}
 		
 		]]>
 		</stylesheet>
@@ -829,6 +836,42 @@ div.error ul {
 		</stylesheet>
 	</stylesheets>
 	<templates>
+            <template name="headerinclude" version="1612"><![CDATA[
+                <!-- This section is STANDARD headerinclude contents -->
+                <link rel="alternate" type="application/rss+xml" title="{$lang->latest_threads} (RSS 2.0)" href="{$mybb->settings['bburl']}/syndication.php" />
+                <link rel="alternate" type="application/atom+xml" title="{$lang->latest_threads} (Atom 1.0)" href="{$mybb->settings['bburl']}/syndication.php?type=atom1.0" />
+                <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+                <meta http-equiv="Content-Script-Type" content="text/javascript" />
+                <script type="text/javascript" src="{$mybb->settings['bburl']}/jscripts/prototype.js?ver=1603"></script>
+                <script type="text/javascript" src="{$mybb->settings['bburl']}/jscripts/general.js?ver=1603"></script>
+                <script type="text/javascript" src="{$mybb->settings['bburl']}/jscripts/popup_menu.js?ver=1600"></script>
+                {$stylesheets}
+                <script type="text/javascript">
+                <!--
+                        var cookieDomain = "{$mybb->settings['cookiedomain']}";
+                        var cookiePath = "{$mybb->settings['cookiepath']}";
+                        var cookiePrefix = "{$mybb->settings['cookieprefix']}";
+                        var deleteevent_confirm = "{$lang->deleteevent_confirm}";
+                        var removeattach_confirm = "{$lang->removeattach_confirm}";
+                        var loading_text = '{$lang->ajax_loading}';
+                        var saving_changes = '{$lang->saving_changes}';
+                        var use_xmlhttprequest = "{$mybb->settings['use_xmlhttprequest']}";
+                        var my_post_key = "{$mybb->post_code}";
+                        var imagepath = "{$theme['imgdir']}";
+                // -->
+                </script>
+                {$newpmmsg}
+                <!-- END STANDARD headerinclude -->
+                
+                <!-- STARBOW-->
+                <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+                <script type="text/javascript">
+                    jQuery.noConflict();
+                </script>
+                <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+                <script src="{$mybb->settings['bburl']}/jscripts/starbow.js?ver=1"></script>
+                <!-- END STARBOW -->
+            ]]></template>
 		<template name="header" version="1612"><![CDATA[<div id="container">
 		{$starbow_nav_bar}
 		<a name="top" id="top"></a>
@@ -867,13 +910,6 @@ div.error ul {
 		font-style:normal
 	}
 </style>
-
-<!-- jQuery and jQueryUI currently only used for the menu, if they're needed more generally we should move them to a proper global template -->
-<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript">
-    jQuery.noConflict();
-</script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 <!-- TODO: Figure out how to bind a dependency so that this link can go into the header if the nav bar is present -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
