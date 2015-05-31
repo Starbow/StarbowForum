@@ -1,4 +1,3 @@
-
 body {
         margin-top: 3.3em;
 }
@@ -60,7 +59,6 @@ body {
 
 #navbar a {
   color: #e3e4e6;
-  display: block;
   text-align: left;
   font-size: 18px;
   font-family: "goboldregular";
@@ -75,6 +73,10 @@ body {
   -o-transition: line-height 0.05s ease-in-out;
   transition: line-height 0.05s ease-in-out;
 }
+                    
+#navbar ul ul a {   
+  display: block; /* Necessary for under-menu items to appear beneath each other */
+}    
 
 #navbar a:hover {
   background-color: #e3e4e6;
@@ -85,8 +87,16 @@ body {
   box-shadow: 0 0 5px #380404 ;
 }
 
-.authentication {
+#navbar .navbar-logo a:hover {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 #380404;
+    -moz-box-shadow: 0 0 0 #380404;
+    box-shadow: 0 0 0 #380404;
+}
+
+#navbar_items_right {
   float: right;
+  font-size: 16px;
 }
 
 /* Corrections required to override some forum standard rules */
@@ -97,4 +107,13 @@ body {
 #navbar .menu ul {
   font-weight: normal;
 }
-
+                    
+/* Starbow's custom MyCode (bbCode) styling */
+.starbow_spoiler_toggler {
+  color: #808080;
+  font-family: monospace;
+  cursor: pointer;
+}
+		
+		
+		

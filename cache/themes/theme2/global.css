@@ -106,7 +106,7 @@ table {
 }
 
 .tcat {
-	background: #8F1B2B;
+	background: #ae3d40;
 	color: #FFFFFF;
 	font-size: 12px;
 }
@@ -190,7 +190,7 @@ table {
 }
 
 .navigation .active {
-	color: #FFFFFF;
+	color: #662424;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -700,3 +700,7 @@ div.error ul {
 	vertical-align: middle;
 	cursor: pointer;
 }
+
+		
+		
+		
