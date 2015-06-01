@@ -938,6 +938,7 @@ div.error ul {
 		</li>
 		<li><a href="{$mybb->settings['sb_main_site_url']}/events">Events</a></li>
 		<li><a href="http://starbow.wikia.com/wiki/Starbow_Wiki">Wiki</a></li>
+		<li role="presentation" class="ui-menu-item"><a role="menuitem" tabindex="-1" class="ui-corner-all" id="ui-id-8" href="/about/geimbangbeop">게임 방법</a></li>
 
                 <div id="navbar_items_right">
                     <li>
